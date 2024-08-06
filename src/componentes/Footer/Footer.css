@@ -1,0 +1,26 @@
+footer {
+    background-color: #6278F6;
+    padding: 15px 0px;
+}
+
+.areas-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #FFFF;
+}
+
+.area-icones-footer {
+    min-width: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.area-icones-footer img {
+    max-width: 15px;
+    max-height: 15px;
+}
+
+.logo-footer {
+    max-height: 40px;
+}
