@@ -22,3 +22,15 @@ h1 {
 h1, h2 {
   font-family: 'Prata', serif;
 }
+
+.cabecalho-times {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.cabecalho-times img {
+  position: absolute;
+  padding-left: 85%;
+}

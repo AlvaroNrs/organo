@@ -243,6 +243,8 @@ function App() {
 
   const [colaboradores, setColaboradores] = useState(inicial)
 
+  const [visaoFormularios, setVisaoFormularios] = useState(true)
+
   function deletarColaborador(id) {
     setColaboradores(colaboradores.filter(colaborador => colaborador.id !== id));
   }
@@ -271,6 +273,10 @@ function App() {
     }))
   }
 
+  function mudarVisaoFormularios(){
+    setVisaoFormularios(!visaoFormularios);
+  }
+
   return (
     <div>
       <Banner />
@@ -278,9 +284,13 @@ function App() {
         cadastrarTime={cadastrarTime}
         times={times.map(time => time.nome)}
         aoCadastrar={colaborador => setColaboradores([...colaboradores, colaborador])}
+        formularioVisivel={visaoFormularios}
       />
       <section className="times">
-        <h1>Minha organização</h1>
+        <section className="cabecalho-times">
+          <h1>Minha organização</h1>
+          <img onClick={mudarVisaoFormularios} src="/imagens/Botão add-01 1.png" alt="Ocultar/Mostrar Formulários"/>
+        </section>
         {times.map((time, indice) => 
           <Time
             aoFavoritar={resolverFavorito}

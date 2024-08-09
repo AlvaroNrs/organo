@@ -2,9 +2,9 @@ import { useState } from 'react'
 import Botao from '../Botao'
 import Campo from '../Campo'
 import ListaSuspensa from '../ListaSuspensa'
-import './formulario.css'
+import './Formulario.css'
 
-const Formulario = ({aoCadastrar, times, cadastrarTime}) => {
+const Formulario = ({aoCadastrar, times, cadastrarTime, formularioVisivel}) => {
 
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
@@ -25,7 +25,7 @@ const Formulario = ({aoCadastrar, times, cadastrarTime}) => {
     }
 
     return (
-        <section className="formulario-container">
+        formularioVisivel === true && <section className="formulario-container">
             <form className="formulario" onSubmit={aoSubmeter}>
                 <h2>Preencha os dados para criar o card do colaborador.</h2>
                 <Campo
