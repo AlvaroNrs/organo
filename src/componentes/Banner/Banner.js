@@ -6,7 +6,7 @@ export const Banner = () => {
     return (
         //Fragments
         <>
-            <header className="banner">    
+            <header className="cabecalho">    
                 <img src="/imagens/banner.png" alt="Banner principal da página Organo"/>
             </header>
         </>
