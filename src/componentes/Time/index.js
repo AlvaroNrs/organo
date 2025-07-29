@@ -1,5 +1,5 @@
 import Colaborador from '../Colaborador';
-import './Time.css';
+import './time.css';
 
 const Time = (props) => {
     const css = { backgroundColor: props.corSecundaria };
