@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useReducer, useState } from 'react';
 import Banner from './componentes/Banner';
 import Formulario from './componentes/Formulario';
 import Time from './componentes/Time';
 import Footer from './componentes/Footer';
+import reducer, { ADICIONAR_INTEGRANTE } from './reducer';
 
 function App() {      
         
@@ -47,14 +48,20 @@ function App() {
   /*
   O useState é uma ferramenta específica do React para gerenciar estados, permitindo que um componente reaja a mudanças no estado e se renderize novamente. Pode, por exemplo, ser utilizado para modificar o estado de campo no ciclo de vida do React, enquanto uma let pode apenas ser utilizada para armazenar um valor a uma variável, sem mudar a renderização do componente.
   */
-  const [colaboradores, setColaboradores] = useState([]); 
+  //const [colaboradores, setColaboradores] = useState([]); 
+  const [colaboradores, dispatch] = useReducer(reducer, [])
 
   const aoNovoColaboradorAdicionado = (colaborador) => {
     //console.log(colaborador.nome, colaborador.cargo, colaborador.imagem);
     //Habilitar ferramente de debug
     //debugger
     //Setando o estado como a lista de todos os colaboradores junto ao novo colaborador
-    setColaboradores([...colaboradores, colaborador]);
+    //setColaboradores([...colaboradores, colaborador]);
+    /* REFATORAÇÃO - 29/07/2025 - USANDO useReducer */
+    dispatch({
+      tipo: ADICIONAR_INTEGRANTE,
+      colaborador: colaborador
+    })
   }
 
   return (
